@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+import java.util.ArrayList; 
 public class Question5
 {
   public static void main(String[] args)
@@ -27,6 +27,47 @@ public class Question5
      */
      
     Scanner in = new Scanner(System.in);
-    
-  }
+
+System.out.print("Input number : ");
+ int n = in.nextInt();    
+
+ArrayList<Integer> data = new ArrayList<>();
+for (int m=0; m <n;m++){
+  System.out.print("Input number : ");
+ int num = in.nextInt(); 
+data.add(num);
 }
+System.out.print(data);
+int mode = data.get(0);
+
+  int maxCount = 0;
+
+  for (int i = 0; i < data.size(); i++) {
+
+    int value = data.get(i);
+
+    int count = 1;
+
+    for (int j = 0; j < data.size(); j++) {
+
+        if (data.get(j) == value) count++;
+
+        if (count > maxCount) {
+
+            mode = value;
+
+            maxCount = count;
+
+        }
+  
+  }
+  }
+  System.out.println();
+  System.out.print("The mode is: "+mode);
+  }
+
+     
+
+  }
+  
+
